@@ -1,14 +1,52 @@
 # Measure the difference in power consumption between PyTorch and ONNX Runtime
 
+UNDER DEVELOPMENT
+
 ## Setup
 
 ```bash
-pip install onnxruntime-gpu
+pip install onnx
 pip install transformers
 pip install torch (or GPU version)
+pip install onnxruntime-gpu
+pip install experiment-impact-tracker 
+```
+
+### Windows
+
+Install Power Gadget: https://www.intel.com/content/www/us/en/developer/articles/tool/power-gadget.html
+
+TODO: find Python package for Power Gadget 
+
+## Export model
+
+```bash
+python export.py
+```
+
+## Run on Windows
+
+In one terminal
+
+```bash
+python create_session.py
+```
+
+In another
+
+```bash
+"c:\Program Files\Intel\Power Gadget 3.6\PowerLog3.0.exe" -file power.csv -cmd python run_session.py
+```
+
+## Run on Mac
+
+```bash
+python score.py
 ```
 
 ## Tools
+
+https://www.intel.com/content/www/us/en/developer/articles/tool/power-gadget.html 
 
 https://github.com/Breakend/experiment-impact-tracker
 
@@ -22,19 +60,3 @@ https://github.com/Syllo/nvtop
 https://developer.nvidia.com/nvidia-management-library-nvml 
 
 
-## Current error
-
-```bash
-$ python run_session.py 
-Traceback (most recent call last):
-  File "C:\Users\nakersha\Develop\code\microsoft\onnxruntime-inference-examples\python\power\run_session.py", line 3, in <module>
-    import session_resources as sr
-  File "C:\Users\nakersha\Develop\code\microsoft\onnxruntime-inference-examples\python\power\session_resources.py", line 2, in <module>
-    import score
-  File "C:\Users\nakersha\Develop\code\microsoft\onnxruntime-inference-examples\python\power\score.py", line 8, in <module>
-    from experiment_impact_tracker.compute_tracker import ImpactTracker
-  File "C:\Users\nakersha\Miniconda3\envs\power\lib\site-packages\experiment_impact_tracker\compute_tracker.py", line 16, in <module>
-    from pandas.io.json import json_normalize
-ImportError: cannot import name 'json_normalize' from 'pandas.io.json' (C:\Users\nakersha\Miniconda3\envs\power\lib\site-packages\pandas\io\json\__init__.py)
-(power) 
-```
