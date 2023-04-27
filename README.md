@@ -1,4 +1,4 @@
-# Measure the difference in power consumption between PyTorch and ONNX Runtime
+# ONNX Runtime energy consumption
 
 UNDER DEVELOPMENT
 
