@@ -5,7 +5,7 @@ import numpy as np
 import onnxruntime
 import transformers
 import torch
-from experiment_impact_tracker.compute_tracker import ImpactTracker
+#from experiment_impact_tracker.compute_tracker import ImpactTracker
 
 
 # The pre process function take a question and a context, and generates the tensor inputs to the model:
@@ -59,7 +59,8 @@ def init():
     options = onnxruntime.SessionOptions() 
     options.log_severity_level = 0
     options.log_verbosity_level = 2
-    session = onnxruntime.InferenceSession(model_path, providers=["CUDAExecutionProvider", "CPUExecutionProvider"], options=options) 
+    #session = onnxruntime.InferenceSession(model_path, providers=["CUDAExecutionProvider", "CPUExecutionProvider"], options=options) 
+    session = onnxruntime.InferenceSession(model_path, providers=["CPUExecutionProvider"], options=options) 
 
     return (tokenizer, session, model, device)
 
@@ -83,7 +84,7 @@ def run_pytorch(tokenizer, model, raw_data):
 def run(tokenizer, session, raw_data):
     logging.info("Request received")
 
-    tracker = ImpactTracker(tmp_dir)
+    #tracker = ImpactTracker(tmp_dir)
 
     inputs = json.loads(raw_data)
 
@@ -101,7 +102,7 @@ def run(tokenizer, session, raw_data):
         'segment_ids': [segment_ids]
         }
     
-    tracker.launch_impact_monitor()
+    #tracker.launch_impact_monitor()
                   
     outputs = session.run(['start_logits', 'end_logits'], model_inputs)
 
@@ -121,6 +122,6 @@ if __name__ == '__main__':
 
     input = "{\"question\": \"What is Dolly Parton's middle name?\", \"context\": \"Dolly Rebecca Parton is an American singer-songwriter\"}"
 
-    #print(f'PyTorch: {run_pytorch(tokenizer, model, input)}')
-    print(f'ORT: {run(tokenizer, session, input)}')
+    print(f'PyTorch: {run_pytorch(tokenizer, model, input)}')
+    #print(f'ORT: {run(tokenizer, session, input)}')
 

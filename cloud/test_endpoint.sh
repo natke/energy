@@ -1,0 +1,1 @@
+curl -i -X POST host:port/post-file -H "Content-Type: text/xml" --data-binary "@path/to/file"

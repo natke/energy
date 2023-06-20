@@ -2,7 +2,21 @@
 
 UNDER DEVELOPMENT
 
-## Setup
+## Cloud experimentation
+
+### Model
+
+Try whisper large
+
+### Inference script
+
+
+### Measurement tools
+
+
+## Local experimentation
+
+### Setup
 
 ```bash
 pip install onnx
@@ -12,19 +26,19 @@ pip install onnxruntime-gpu
 pip install experiment-impact-tracker 
 ```
 
-### Windows
+#### Windows
 
 Install Power Gadget: https://www.intel.com/content/www/us/en/developer/articles/tool/power-gadget.html
 
 TODO: find Python package for Power Gadget 
 
-## Export model
+### Export model
 
 ```bash
 python export.py
 ```
 
-## Run on Windows
+### Run on Windows
 
 In one terminal
 
@@ -38,13 +52,13 @@ In another
 "c:\Program Files\Intel\Power Gadget 3.6\PowerLog3.0.exe" -file power.csv -cmd python run_session.py
 ```
 
-## Run on Mac
+### Run on Mac
 
 ```bash
 python score.py
 ```
 
-## Tools
+### Reference
 
 https://www.intel.com/content/www/us/en/developer/articles/tool/power-gadget.html 
 
@@ -56,7 +70,6 @@ nvcc
 
 https://github.com/Syllo/nvtop
 
-
 https://developer.nvidia.com/nvidia-management-library-nvml 
 
-
+https://learn.microsoft.com/en-us/azure/machine-learning/how-to-deploy-online-endpoints?view=azureml-api-2&tabs=azure-cli 
