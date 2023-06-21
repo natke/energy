@@ -4,6 +4,10 @@ UNDER DEVELOPMENT
 
 ## Cloud experimentation
 
+### Environment
+
+conda env create --file=whisper.yml
+
 ### Model
 
 Try whisper large
