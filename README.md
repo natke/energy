@@ -12,8 +12,13 @@ conda env create --file=whisper.yml
 
 Try whisper large
 
+### Endpoint
+
 ### Inference script
 
+### Call scoring endpoint
+
+curl -i -X POST host:port/post-file -H "Content-Type: text/xml" --data-binary "@path/to/file"
 
 ### Measurement tools
 
