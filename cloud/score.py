@@ -11,7 +11,7 @@ def init():
 
     global session, model, processor
 
-    model_name = "openai/whisper-tiny.en"
+    model_name = "whisper-tiny-en-e2e-int8"
 
     # use AZUREML_MODEL_DIR to get your deployed model(s). If multiple models are deployed, 
     # model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), '$MODEL_NAME/$VERSION/$MODEL_FILE_NAME')
