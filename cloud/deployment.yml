@@ -2,7 +2,7 @@ $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.sch
 name: blue
 endpoint_name: whisper
 model:
-  path: ./
+  path: ../../energy/cloud/model
 code_configuration:
   code: ./
   scoring_script: score.py

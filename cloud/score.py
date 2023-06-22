@@ -20,7 +20,7 @@ def init():
     logging.warning("Loading model from ", model_dir)
 
     if model_dir == None:
-        model_dir = "./model"
+        model_dir = "./"
     model_path = os.path.join(model_dir, model_name + ".onnx")
 
     # Create an ONNX Runtime session to run the ONNX model

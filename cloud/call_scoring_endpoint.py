@@ -9,6 +9,6 @@ with open(audio_file, "rb") as f:
 
 payload = json.dumps({"audio": audio.tolist()})
 
-response = requests.post("http://localhost:5001/score", data=payload)
+response = requests.post("http://localhost:32809/score", data=payload)
 
 print(response.json())
