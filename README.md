@@ -2,17 +2,41 @@
 
 UNDER DEVELOPMENT
 
+- [x] Create ONNX Runtime endpoint
+- [ ] Run on GPU
+- [] Deploy with whisper large
+- [] Create PyTorch endpoint
+- [x] Figure out how to measure energy consumption per endpoint with AML
+- [] Compare the two
+
 ## Cloud experimentation
 
-### Environment
+### Dependencies
 
-conda env create --file=whisper.yml
+See [env.yml](env.yml)
+
+### Compute
+
 
 ### Model
 
 Try whisper large
 
 ### Endpoint
+
+
+
+```bash
+https://whisper-onnx.australiaeast.inference.ml.azure.com/score
+```
+
+### Metrics
+
+Go to endpoint in AML
+
+Click on metrics
+
+Add metric GPU energy in Joules
 
 ### Inference script
 
@@ -82,3 +106,9 @@ https://github.com/Syllo/nvtop
 https://developer.nvidia.com/nvidia-management-library-nvml 
 
 https://learn.microsoft.com/en-us/azure/machine-learning/how-to-deploy-online-endpoints?view=azureml-api-2&tabs=azure-cli 
+
+https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-gpu 
+
+https://learn.microsoft.com/en-us/azure/virtual-machines/ncv3-series
+
+![Azure VM NC series](image.png)
