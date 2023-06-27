@@ -5,8 +5,9 @@ UNDER DEVELOPMENT
 - [x] Create ONNX Runtime endpoint
 - [x] Run on GPU
 - [] Deploy with whisper large
-- [] Create PyTorch endpoint
+- [x] Create PyTorch endpoint
 - [x] Figure out how to measure energy consumption per endpoint with AML
+- [] Mimic a typical user flow
 - [] Compare the two
 
 ## Cloud experimentation
@@ -51,6 +52,8 @@ python call_scoring_endpoint.py
 python call_pytorch_endpoint.py
 
 ### Measurement tools
+
+https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/dashboard/arm/subscriptions/ea482afa-3a32-437c-aa10-7de928a9e793/resourcegroups/dashboards/providers/microsoft.portal/dashboards/b9f4a0f0-3f2f-479a-9aee-b60085c50077 
 
 ## Local experimentation
 
