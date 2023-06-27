@@ -3,7 +3,7 @@
 UNDER DEVELOPMENT
 
 - [x] Create ONNX Runtime endpoint
-- [ ] Run on GPU
+- [x] Run on GPU
 - [] Deploy with whisper large
 - [] Create PyTorch endpoint
 - [x] Figure out how to measure energy consumption per endpoint with AML
@@ -20,7 +20,7 @@ See [env.yml](env.yml)
 
 ### Model
 
-Try whisper large
+
 
 ### Endpoint
 
@@ -38,14 +38,19 @@ Click on metrics
 
 Add metric GPU energy in Joules
 
-### Inference script
+### Scoring scripts
+
+```bash
+python score.py
+python score_with_pytorch.py
+```
 
 ### Call scoring endpoint
 
-curl -i -X POST host:port/post-file -H "Content-Type: text/xml" --data-binary "@path/to/file"
+python call_scoring_endpoint.py
+python call_pytorch_endpoint.py
 
 ### Measurement tools
-
 
 ## Local experimentation
 

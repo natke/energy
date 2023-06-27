@@ -11,7 +11,7 @@ from transformers import WhisperProcessor, WhisperForConditionalGeneration
 def init():
     global model, processor
 
-    model_name = "openai/whisper-tiny.en"
+    model_name = "openai/whisper-large-v2"
 
     processor = WhisperProcessor.from_pretrained(model_name)
     model = WhisperForConditionalGeneration.from_pretrained(model_name)

@@ -1,10 +1,10 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
 name: green
 endpoint_name: whisper
-model: azureml:whisper-tiny:1
+model: azureml:whisper-large:1
 code_configuration:
   code: ../scoring
-  scoring_script: score_with_pytorch.py
+  scoring_script: score_large_with_pytorch.py
 environment: 
   conda_file: ./env.yml
   image: mcr.microsoft.com/azureml/inference-base-gpu-2004:latest
