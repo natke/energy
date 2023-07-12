@@ -4,11 +4,11 @@ UNDER DEVELOPMENT
 
 - [x] Create ONNX Runtime endpoint
 - [x] Run on GPU
-- [] Deploy with whisper large
+- [ ] Deploy with whisper large
 - [x] Create PyTorch endpoint
 - [x] Figure out how to measure energy consumption per endpoint with AML
-- [] Mimic a typical user flow
-- [] Compare the two
+- [ ] Mimic a typical user flow
+- [ ] Compare the two
 
 ## Cloud experimentation
 
