@@ -1,0 +1,12 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: blue
+endpoint_name: phi-2
+model: azureml:phi-2:1
+code_configuration:
+  code: ./
+  scoring_script: score_phi2_pt.py
+environment: 
+  conda_file: ./env.yml
+  image: mcr.microsoft.com/azureml/inference-base-gpu-2004:latest
+instance_type: Standard_NC6s_v3
+instance_count: 1
