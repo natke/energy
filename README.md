@@ -19,6 +19,12 @@ See [./cloud] folder
 
 See [env.yml](env.yml) in each model directory
 
+To build onnxruntime
+
+```bash
+./build.sh --use_cuda --config RelWithDebInfo --build_shared_lib --parallel --skip_tests --build_wheel
+```
+
 ### Compute
 
 

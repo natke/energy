@@ -10,8 +10,8 @@ def init():
 
   global model, tokenizer, detokenizer
 
-  device_type = og.DeviceType.CUDA
-  name = "microsoft/phi-2/int4"
+  device_type = og.DeviceType.CPU
+  name = "microsoft/phi-2/cpu-int4"
 
   # use AZUREML_MODEL_DIR to get your deployed model(s). If multiple models are deployed, 
   # model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), '$MODEL_NAME/$VERSION/$MODEL_FILE_NAME')
@@ -58,4 +58,4 @@ if __name__ == '__main__':
 
     payload = json.dumps({"prompt": prompt})
 
-    print(run(payload))
+    print(run(payload)["output"])
