@@ -18,7 +18,8 @@ def run(payload):
 
   outputs = model.generate(**inputs, max_length=200)
   text = tokenizer.batch_decode(outputs)[0]
-  print(text)
+
+  return json.dumps({"text": text}) 
 
 if __name__ == '__main__':
     init()

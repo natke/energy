@@ -2,19 +2,22 @@
 
 UNDER DEVELOPMENT
 
-- [x] Create ONNX Runtime endpoint
+- [x] Deploy  phi-2
+- [ ] Deploy llama
+- [ ] Deploy whisper
+- [ ] Deploy stable diffusion
 - [x] Run on GPU
-- [ ] Deploy with whisper large
-- [x] Create PyTorch endpoint
-- [x] Figure out how to measure energy consumption per endpoint with AML
+- [x] Add GPU energy metric to endpoint
 - [ ] Mimic a typical user flow
 - [ ] Compare the two
 
 ## Cloud experimentation
 
+See [./cloud] folder
+
 ### Dependencies
 
-See [env.yml](env.yml)
+See [env.yml](env.yml) in each model directory
 
 ### Compute
 
@@ -25,6 +28,14 @@ See [env.yml](env.yml)
 
 ### Endpoint
 
+```
+export ENDPOINT_NAME=phi-2
+az ml online-endpoint create --local -n $ENDPOINT_NAME -f endpoint.yml
+```
+
+### Deployment
+
+ az ml online-deployment create --local -n blue --endpoint $ENDPOINT_NAME -f deploy-local.yml
 
 
 ```bash
