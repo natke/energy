@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carbon Footprint Calculator</title>
+</head>
+<body>
+    <h1>Carbon Footprint Calculator</h1>
+    <form action="/calculate" method="post">
+        <label>Household Size:
+            <input type="number" name="household_size" required>
+        </label>
+        <label>Gas Usage (units):
+            <input type="number" name="gas_usage" required>
+        </label>
+        <label>Electricity Usage (units):
+            <input type="number" name="electricity_usage" required>
+        </label>
+        <label>Airline Miles Traveled:
+            <input type="number" name="airline_miles" required>
+        </label>
+        <label>Number of Cars:
+            <input type="number" name="car_count" required>
+        </label>
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>
