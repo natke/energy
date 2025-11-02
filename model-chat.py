@@ -42,6 +42,7 @@ def main(args):
     params = og.GeneratorParams(model)
     params.set_search_options(**search_options)
 
+    if args.verbose: print("Creating generator ...")
     generator = og.Generator(model, params)
     if args.verbose: print("Generator created")
 
@@ -56,7 +57,10 @@ def main(args):
 
     # Keep asking for input prompts in a loop
     while True:
-        text = input("Prompt (Use quit() to exit): ")
+        # Print the prompt to stdout explicitly, then call input() with no prompt
+        # so the prompt text is guaranteed to appear on stdout (not stderr).
+        print("Prompt (Use quit() to exit): ", end='', flush=True)
+        text = input()
         if not text:
             print("Error, input cannot be empty")
             continue
